@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1b3040" />
+    <meta name="description" content="Clash of Paw — a quick, tactical dog tower battle." />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/icon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Clash of Paw</title>
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <a class="brand" href="." aria-label="Clash of Paw home"><span>🐾</span> CLASH <i>OF</i> PAW</a>
+        <button class="install hidden" id="install">Install app</button>
+      </header>
+
+      <section class="hero" id="intro">
+        <p class="eyebrow">DOG TOWER DUEL</p>
+        <h1>Lead the pack.<br /><em>Take the tower.</em></h1>
+        <p class="lede">A compact 1v1 strategy battle. Build energy, deploy your dogs, and tear down the rival kennel before time runs out.</p>
+        <button class="primary" id="play">Play quick match <span>→</span></button>
+        <p class="controls">Pick a pup below · dogs fight automatically · use skills at the right moment</p>
+      </section>
+
+      <section class="game hidden" id="game" aria-live="polite">
+        <div class="hud">
+          <div class="tower-stat player"><span class="team-label">YOUR KENNEL</span><strong id="playerHp">100</strong><div class="bar"><i id="playerBar"></i></div></div>
+          <div class="timer"><span>QUICK MATCH</span><strong id="clock">1:40</strong></div>
+          <div class="tower-stat enemy"><span class="team-label">RIVAL KENNEL</span><strong id="enemyHp">100</strong><div class="bar"><i id="enemyBar"></i></div></div>
+        </div>
+        <div class="arena" id="arena">
+          <div class="sky"></div>
+          <div class="tower home"><span>🐶</span><b>KENNEL</b></div>
+          <div class="tower rival"><span>🐕</span><b>RIVAL</b></div>
+          <div class="lane"></div>
+          <div class="units" id="units"></div>
+          <div class="clash-flash" id="flash"></div>
+        </div>
+        <div class="controls-row">
+          <div class="energy"><span>⚡</span><b id="energy">8</b><small>/10 ENERGY</small></div>
+          <div class="cards">
+            <button class="card" data-unit="scout" disabled><span class="dog">🐕</span><span><b>Scout</b><small>Fast runner</small></span><i>2</i></button>
+            <button class="card" data-unit="bulldog" disabled><span class="dog">🐶</span><span><b>Bulldog</b><small>Tough biter</small></span><i>4</i></button>
+            <button class="card" data-unit="hound" disabled><span class="dog">🐺</span><span><b>Hound</b><small>Big damage</small></span><i>6</i></button>
+          </div>
+          <button class="skill" id="skill" disabled><span>📣</span><b>PACK HOWL</b><small id="skillText">READY</small></button>
+        </div>
+      </section>
+
+      <section class="how" id="how">
+        <div><span>01</span><h2>Gather energy</h2><p>Your kennel refills energy steadily—and faster in the final stretch.</p></div>
+        <div><span>02</span><h2>Choose your pack</h2><p>Spend it on fast scouts, resilient bulldogs, or hard-hitting hounds.</p></div>
+        <div><span>03</span><h2>Time the howl</h2><p>Stun the opposing pack at a decisive moment and make a break for their tower.</p></div>
+      </section>
+    </main>
+    <dialog id="result"><div class="result-inner"><p class="eyebrow" id="resultLabel">MATCH COMPLETE</p><h2 id="resultTitle">Good dogs win.</h2><p id="resultCopy"></p><button class="primary" id="again">Play again <span>→</span></button></div></dialog>
+    <script src="app.js"></script>
+  </body>
+</html>
