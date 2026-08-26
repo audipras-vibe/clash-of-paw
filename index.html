@@ -14,16 +14,21 @@
   <body>
     <main class="shell">
       <header>
-        <a class="brand" href="." aria-label="Clash of Paw home"><span>🐾</span> CLASH <i>OF</i> PAW</a>
+        <button class="brand" id="home" aria-label="Clash of Paw main menu"><span>🐾</span> CLASH <i>OF</i> PAW</button>
         <button class="install hidden" id="install">Install app</button>
       </header>
 
       <section class="hero" id="intro">
         <p class="eyebrow">DOG TOWER DUEL</p>
-        <h1>Lead the pack.<br /><em>Take the tower.</em></h1>
-        <p class="lede">A compact 1v1 strategy battle. Build energy, deploy your dogs, and tear down the rival kennel before time runs out.</p>
-        <button class="primary" id="play">Play quick match <span>→</span></button>
-        <p class="controls">Pick a pup below · dogs fight automatically · use skills at the right moment</p>
+        <h1>Pick your<br /><em>next fight.</em></h1>
+        <p class="lede">Lead a pack of brave dogs in a fast, tactical tower duel.</p>
+        <div class="menu" aria-label="Game modes">
+          <button class="mode active" id="play"><span class="mode-icon">⚡</span><span><b>Quick Match</b><small>Playable now · versus AI</small></span><i>PLAY <em>→</em></i></button>
+          <button class="mode coming" data-feature="PvP Arena"><span class="mode-icon">⚔️</span><span><b>PvP Arena</b><small>Ranked & friendly battles</small></span><i>IN DEVELOPMENT</i></button>
+          <button class="mode coming" data-feature="The Market"><span class="mode-icon">🦴</span><span><b>The Market</b><small>Future cosmetics & player trading</small></span><i>IN DEVELOPMENT</i></button>
+          <a class="whitepaper-link" href="whitepaper.html"><span>📜</span><span><b>Whitepaper</b><small>Read the vision, gameplay, and economy</small></span><i>READ <em>→</em></i></a>
+        </div>
+        <p class="controls">Quick Match: build energy · deploy your pack · bring down the rival kennel</p>
       </section>
 
       <section class="game hidden" id="game" aria-live="polite">
@@ -57,7 +62,8 @@
         <div><span>03</span><h2>Time the howl</h2><p>Stun the opposing pack at a decisive moment and make a break for their tower.</p></div>
       </section>
     </main>
-    <dialog id="result"><div class="result-inner"><p class="eyebrow" id="resultLabel">MATCH COMPLETE</p><h2 id="resultTitle">Good dogs win.</h2><p id="resultCopy"></p><button class="primary" id="again">Play again <span>→</span></button></div></dialog>
+    <dialog id="result"><div class="result-inner"><p class="eyebrow" id="resultLabel">MATCH COMPLETE</p><h2 id="resultTitle">Good dogs win.</h2><p id="resultCopy"></p><button class="primary" id="again">Play again <span>→</span></button><button class="text-button" id="menuFromResult">Back to menu</button></div></dialog>
+    <dialog id="comingSoon"><div class="result-inner"><p class="eyebrow">ON THE ROADMAP</p><h2 id="featureTitle">PvP Arena</h2><p id="featureCopy"></p><button class="primary" id="closeFeature">Got it <span>→</span></button></div></dialog>
     <script src="app.js"></script>
   </body>
 </html>
