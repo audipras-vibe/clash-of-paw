@@ -5,17 +5,17 @@ const UNITS = {
   brutus: {
     name: 'Brutus', role: 'G', cost: 2, hp: 260, armor: 55, damage: 23,
     speed: 4.4, range: 5.2, attackRate: 1.35, specialRate: 18,
-    image: 'assets/characters/brutus-warrior.png'
+    image: 'brutus-warrior.png'
   },
   sage: {
     name: 'Sage', role: 'S', cost: 3, hp: 175, armor: 10, damage: 13,
     speed: 4, range: 10, attackRate: 1.65, specialRate: 15,
-    image: 'assets/characters/sage-healer.png'
+    image: 'sage-healer.png'
   },
   hex: {
     name: 'Hex', role: 'M', cost: 3, hp: 145, armor: 5, damage: 31,
     speed: 3.65, range: 15, attackRate: 1.9, specialRate: 13,
-    image: 'assets/characters/hex-mage.png'
+    image: 'hex-mage.png'
   }
 };
 

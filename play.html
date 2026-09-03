@@ -6,10 +6,10 @@
     <meta name="theme-color" content="#16152b" />
     <meta name="description" content="Play Clash of Paw — a fast tactical dog tower battler." />
     <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
-    <link rel="preload" href="assets/characters/brutus-warrior.png" as="image" />
-    <link rel="preload" href="assets/characters/sage-healer.png" as="image" />
-    <link rel="preload" href="assets/characters/hex-mage.png" as="image" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="preload" href="brutus-warrior.png" as="image" />
+    <link rel="preload" href="sage-healer.png" as="image" />
+    <link rel="preload" href="hex-mage.png" as="image" />
     <link rel="stylesheet" href="styles.css" />
     <title>Play — Clash of Paw</title>
   </head>
@@ -54,9 +54,9 @@
               <p class="fine-print">No wallet. No purchase. Just paws and tactics.</p>
             </div>
             <div class="pack-showcase" aria-label="Your starting pack">
-              <article class="hero-card warrior"><div class="role"><span>01</span> GUARDIAN</div><img src="assets/characters/brutus-warrior.png" alt="Brutus, a Shiba Inu warrior with a paw shield" /><div class="hero-name"><span>BRUTUS</span><small>Holds the line</small></div></article>
-              <article class="hero-card healer"><div class="role"><span>02</span> HEALER</div><img src="assets/characters/sage-healer.png" alt="Sage, a Corgi healer holding a glowing paw charm" /><div class="hero-name"><span>SAGE</span><small>Mends the pack</small></div></article>
-              <article class="hero-card mage"><div class="role"><span>03</span> MAGE</div><img src="assets/characters/hex-mage.png" alt="Hex, a Dachshund magician with a glowing staff" /><div class="hero-name"><span>HEX</span><small>Burns through crowds</small></div></article>
+              <article class="hero-card warrior"><div class="role"><span>01</span> GUARDIAN</div><img src="brutus-warrior.png" alt="Brutus, a Shiba Inu warrior with a paw shield" /><div class="hero-name"><span>BRUTUS</span><small>Holds the line</small></div></article>
+              <article class="hero-card healer"><div class="role"><span>02</span> HEALER</div><img src="sage-healer.png" alt="Sage, a Corgi healer holding a glowing paw charm" /><div class="hero-name"><span>SAGE</span><small>Mends the pack</small></div></article>
+              <article class="hero-card mage"><div class="role"><span>03</span> MAGE</div><img src="hex-mage.png" alt="Hex, a Dachshund magician with a glowing staff" /><div class="hero-name"><span>HEX</span><small>Burns through crowds</small></div></article>
             </div>
           </section>
 
@@ -76,9 +76,9 @@
             <div class="battle-controls">
               <div class="energy-block"><span class="bolt">ϟ</span><div><strong id="energy">5.0</strong><small>ENERGY</small></div><div class="energy-pips" id="energyPips"></div></div>
               <div class="summon-area"><p><span>SUMMON YOUR PACK</span><small id="nextHint">Choose a fighter</small></p><div class="cards">
-                <button class="card warrior" data-unit="brutus"><img src="assets/characters/brutus-warrior.png" alt="" /><span><b>Brutus</b><small>Guardian · shield</small></span><i>2</i></button>
-                <button class="card healer" data-unit="sage"><img src="assets/characters/sage-healer.png" alt="" /><span><b>Sage</b><small>Support · heal</small></span><i>3</i></button>
-                <button class="card mage" data-unit="hex"><img src="assets/characters/hex-mage.png" alt="" /><span><b>Hex</b><small>Ranged · burst</small></span><i>3</i></button>
+                <button class="card warrior" data-unit="brutus"><img src="brutus-warrior.png" alt="" /><span><b>Brutus</b><small>Guardian · shield</small></span><i>2</i></button>
+                <button class="card healer" data-unit="sage"><img src="sage-healer.png" alt="" /><span><b>Sage</b><small>Support · heal</small></span><i>3</i></button>
+                <button class="card mage" data-unit="hex"><img src="hex-mage.png" alt="" /><span><b>Hex</b><small>Ranged · burst</small></span><i>3</i></button>
               </div></div>
               <div class="skills"><button class="skill heal" id="healSkill"><span>✦</span><b>PACK MEND</b><small id="healText">READY</small></button><button class="skill shield" id="shieldSkill"><span>⬡</span><b>GUARD RALLY</b><small id="shieldText">READY</small></button></div>
               <div class="emotes" aria-label="Pack emotes"><button data-emote="NICE!">🐾</button><button data-emote="WOOF?!">!</button><button data-emote="TO THE MOON!">↗</button></div>

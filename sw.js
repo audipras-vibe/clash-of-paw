@@ -1,5 +1,5 @@
 const CACHE = 'clash-of-paw-v10';
-const FILES = ['./','./index.html','./landing.css','./landing.js','./play.html','./styles.css','./app.js','./manifest.webmanifest','./whitepaper.html','./whitepaper.css','./assets/icon.svg','./assets/characters/brutus-warrior.png','./assets/characters/sage-healer.png','./assets/characters/hex-mage.png'];
+const FILES = ['./','./index.html','./landing.css','./landing.js','./play.html','./styles.css','./app.js','./manifest.webmanifest','./whitepaper.html','./whitepaper.css','./icon.svg','./brutus-warrior.png','./sage-healer.png','./hex-mage.png'];
 self.addEventListener('install', e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES))));
 self.addEventListener('activate', e => e.waitUntil(
   caches.keys()

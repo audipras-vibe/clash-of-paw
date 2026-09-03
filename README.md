@@ -40,4 +40,4 @@ In repository settings, open **Pages**, choose **Deploy from a branch**, select 
 
 ## Character art
 
-Brutus, Sage, and Hex were generated as original dog counterparts using the team-owned Purraria character sheets as visual-role references. The production PNG cutouts live in `assets/characters/`.
+Brutus, Sage, and Hex were generated as original dog counterparts using the team-owned Purraria character sheets as visual-role references. The production PNG cutouts live at the repository root for zero-config static hosting.

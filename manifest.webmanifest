@@ -1,1 +1,1 @@
-{"name":"Clash of Paw","short_name":"Clash of Paw","description":"A fast tactical dog tower battler.","start_url":"./","display":"standalone","background_color":"#fff8e8","theme_color":"#16152b","icons":[{"src":"assets/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
+{"name":"Clash of Paw","short_name":"Clash of Paw","description":"A fast tactical dog tower battler.","start_url":"./","display":"standalone","background_color":"#fff8e8","theme_color":"#16152b","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
