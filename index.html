@@ -3,68 +3,64 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#1b3040" />
-    <meta name="description" content="Clash of Paw — a quick, tactical dog tower battle." />
+    <meta name="theme-color" content="#fff8e8" />
+    <meta name="description" content="Clash of Paw — lead your pack and own the arena in a fast tactical dog battler." />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="assets/icon.svg" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Clash of Paw</title>
+    <link rel="preload" href="assets/characters/brutus-warrior.png" as="image" />
+    <link rel="preload" href="assets/characters/sage-healer.png" as="image" />
+    <link rel="preload" href="assets/characters/hex-mage.png" as="image" />
+    <link rel="stylesheet" href="landing.css" />
+    <title>Clash of Paw — Lead the Pack</title>
   </head>
   <body>
-    <main class="shell">
-      <header>
-        <button class="brand" id="home" aria-label="Clash of Paw main menu"><span>🐾</span> CLASH <i>OF</i> PAW</button>
-        <button class="install hidden" id="install">Install app</button>
-      </header>
-
-      <section class="hero" id="intro">
-        <p class="eyebrow">DOG TOWER DUEL</p>
-        <h1>Pick your<br /><em>next fight.</em></h1>
-        <p class="lede">Lead a pack of brave dogs in a fast, tactical tower duel.</p>
-        <div class="menu" aria-label="Game modes">
-          <button class="mode active" id="play"><span class="mode-icon">⚡</span><span><b>Quick Match</b><small>Playable now · versus AI</small></span><i>PLAY <em>→</em></i></button>
-          <button class="mode coming" data-feature="PvP Arena"><span class="mode-icon">⚔️</span><span><b>PvP Arena</b><small>Ranked & friendly battles</small></span><i>IN DEVELOPMENT</i></button>
-          <button class="mode coming" data-feature="The Market"><span class="mode-icon">🦴</span><span><b>The Market</b><small>Future cosmetics & player trading</small></span><i>IN DEVELOPMENT</i></button>
-          <button class="wallet-link" disabled aria-label="Connect Solana Wallet, coming soon"><span>◎</span><span><b>Connect Solana Wallet</b><small>Optional player identity · coming soon</small></span><i>COMING SOON</i></button>
-          <a class="whitepaper-link" href="whitepaper.html"><span>📜</span><span><b>Whitepaper</b><small>Read the vision, gameplay, and economy</small></span><i>READ <em>→</em></i></a>
-        </div>
-        <p class="controls">Quick Match: build energy · deploy your pack · bring down the rival kennel</p>
-      </section>
-
-      <section class="game hidden" id="game" aria-live="polite">
-        <div class="hud">
-          <div class="tower-stat player"><span class="team-label">YOUR KENNEL</span><strong id="playerHp">100</strong><div class="bar"><i id="playerBar"></i></div></div>
-          <div class="timer"><span>QUICK MATCH</span><strong id="clock">1:40</strong></div>
-          <div class="tower-stat enemy"><span class="team-label">RIVAL KENNEL</span><strong id="enemyHp">100</strong><div class="bar"><i id="enemyBar"></i></div></div>
-        </div>
-        <div class="arena" id="arena">
-          <div class="sky"></div>
-          <div class="tower home"><span>🐶</span><b>KENNEL</b></div>
-          <div class="tower rival"><span>🐕</span><b>RIVAL</b></div>
-          <div class="lane"></div>
-          <div class="units" id="units"></div>
-          <div class="clash-flash" id="flash"></div>
-        </div>
-        <div class="controls-row">
-          <div class="energy"><span>⚡</span><b id="energy">8</b><small>/10 ENERGY</small></div>
-          <div class="cards">
-            <button class="card" data-unit="scout" disabled><span class="dog">🐕</span><span><b>Scout</b><small>Fast runner</small></span><i>2</i></button>
-            <button class="card" data-unit="bulldog" disabled><span class="dog">🐶</span><span><b>Bulldog</b><small>Tough biter</small></span><i>4</i></button>
-            <button class="card" data-unit="hound" disabled><span class="dog">🐺</span><span><b>Hound</b><small>Big damage</small></span><i>6</i></button>
+    <header class="landing-nav wrap">
+      <a class="landing-brand" href="#top" aria-label="Clash of Paw home"><span>◆</span> CLASH <i>OF</i> PAW</a>
+      <nav aria-label="Main navigation">
+        <a href="#game">Game</a><a href="#pack">The Pack</a><a href="whitepaper.html">Whitepaper</a><a class="nav-play" href="play.html" data-launch>Play now</a>
+      </nav>
+    </header>
+    <main id="top">
+      <section class="landing-hero wrap">
+        <div class="landing-copy">
+          <p class="landing-kicker"><span></span> THE PACK IS CALLING</p>
+          <h1>Lead the pack.<br /><em>Own the arena.</em></h1>
+          <p class="landing-lede">A fast tactical battler where every dog has a role—and every three-minute match writes a new rivalry.</p>
+          <div class="landing-actions">
+            <a class="launch-button" href="play.html" data-launch><span><small>FREE TO PLAY</small>ENTER THE KENNEL</span><b>→</b></a>
+            <a class="watch-link" href="#game"><i>▶</i> Discover the game</a>
           </div>
-          <button class="skill" id="skill" disabled><span>📣</span><b>PACK HOWL</b><small id="skillText">READY</small></button>
+          <div class="landing-proof"><span>3-MINUTE BATTLES</span><span>NO WALLET REQUIRED</span><span>OWNABLE COSMETICS</span></div>
+        </div>
+        <div class="landing-pack" aria-label="Brutus, Sage, and Hex">
+          <article class="landing-card brutus"><span>01 · GUARDIAN</span><img src="assets/characters/brutus-warrior.png" alt="Brutus the Shiba Inu warrior" /><b>BRUTUS</b></article>
+          <article class="landing-card sage"><span>02 · HEALER</span><img src="assets/characters/sage-healer.png" alt="Sage the Corgi healer" /><b>SAGE</b></article>
+          <article class="landing-card hex"><span>03 · MAGE</span><img src="assets/characters/hex-mage.png" alt="Hex the Dachshund magician" /><b>HEX</b></article>
         </div>
       </section>
-
-      <section class="how" id="how">
-        <div><span>01</span><h2>Gather energy</h2><p>Your kennel refills energy steadily—and faster in the final stretch.</p></div>
-        <div><span>02</span><h2>Choose your pack</h2><p>Spend it on fast scouts, resilient bulldogs, or hard-hitting hounds.</p></div>
-        <div><span>03</span><h2>Time the howl</h2><p>Stun the opposing pack at a decisive moment and make a break for their tower.</p></div>
+      <section class="game-pitch" id="game">
+        <div class="wrap pitch-grid">
+          <div class="pitch-heading"><p>ONE ARENA. ENDLESS RIVALRIES.</p><h2>Easy to enter.<br />Hard to master.</h2></div>
+          <div class="pitch-steps">
+            <article><b>01</b><h3>Build your pack</h3><p>Combine guardians, healers, and damage dealers into a three-hero strategy.</p></article>
+            <article><b>02</b><h3>Read the arena</h3><p>Spend energy, counter enemy pushes, and protect your kennel in real time.</p></article>
+            <article><b>03</b><h3>Own the final minute</h3><p>Double energy turns every last-second summon into a potential comeback.</p></article>
+          </div>
+        </div>
       </section>
+      <section class="pack-section wrap" id="pack">
+        <p class="landing-kicker"><span></span> MEET THE FOUNDING PACK</p>
+        <div class="pack-title"><h2>Different roles.<br /><em>One pack.</em></h2><p>Collect visual variants, master each role, and build a team that looks as distinctive as it plays. Competitive power stays earned in the arena.</p></div>
+        <div class="pack-roster">
+          <article><img src="assets/characters/brutus-warrior.png" alt="Brutus" /><div><small>GUARDIAN · SHIBA INU</small><h3>Brutus</h3><p>Soaks damage and shields nearby allies.</p></div></article>
+          <article><img src="assets/characters/sage-healer.png" alt="Sage" /><div><small>HEALER · CORGI</small><h3>Sage</h3><p>Restores the pack when a push turns rough.</p></div></article>
+          <article><img src="assets/characters/hex-mage.png" alt="Hex" /><div><small>MAGE · DACHSHUND</small><h3>Hex</h3><p>Burns through clustered enemies from range.</p></div></article>
+        </div>
+      </section>
+      <section class="final-call"><div class="wrap"><p>THE TAVERN DOORS ARE OPEN</p><h2>Your pack is waiting.</h2><a class="launch-button" href="play.html" data-launch><span><small>PLAY THE PROTOTYPE</small>ENTER THE KENNEL</span><b>→</b></a></div></section>
     </main>
-    <dialog id="result"><div class="result-inner"><p class="eyebrow" id="resultLabel">MATCH COMPLETE</p><h2 id="resultTitle">Good dogs win.</h2><p id="resultCopy"></p><button class="primary" id="again">Play again <span>→</span></button><button class="text-button" id="menuFromResult">Back to menu</button></div></dialog>
-    <dialog id="comingSoon"><div class="result-inner"><p class="eyebrow">ON THE ROADMAP</p><h2 id="featureTitle">PvP Arena</h2><p id="featureCopy"></p><button class="primary" id="closeFeature">Got it <span>→</span></button></div></dialog>
-    <script src="app.js"></script>
+    <footer class="wrap landing-footer"><a class="landing-brand" href="#top"><span>◆</span> CLASH <i>OF</i> PAW</a><p>Prototype build · No wallet or purchase required.</p><a href="whitepaper.html">Read the whitepaper →</a></footer>
+    <div class="launch-screen" id="launchScreen" aria-hidden="true"><div class="launch-mark">◆</div><h2>OPENING THE KENNEL</h2><p>PREPARING YOUR PACK</p><div><i></i></div></div>
+    <script src="landing.js"></script>
   </body>
 </html>

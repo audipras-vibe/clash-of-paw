@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#16152b" />
+    <meta name="description" content="Play Clash of Paw — a fast tactical dog tower battler." />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="preload" href="assets/characters/brutus-warrior.png" as="image" />
+    <link rel="preload" href="assets/characters/sage-healer.png" as="image" />
+    <link rel="preload" href="assets/characters/hex-mage.png" as="image" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Play — Clash of Paw</title>
+  </head>
+  <body class="game-client">
+    <div class="client-layout">
+      <aside class="client-sidebar">
+        <a class="client-brand" href="index.html" aria-label="Return to Clash of Paw landing page"><span class="paw-mark">◆</span><b>CLASH <i>OF</i> PAW</b></a>
+        <nav aria-label="Game navigation">
+          <button class="client-nav active" id="home"><span>⌂</span><b>Home</b></button>
+          <button class="client-nav" id="battleNav"><span>⚔</span><b>Battle</b></button>
+          <button class="client-nav coming" data-feature="collection"><span>♢</span><b>My Pack</b></button>
+          <button class="client-nav coming" data-feature="market"><span>◇</span><b>Market</b></button>
+          <button class="client-nav coming" data-feature="barracks"><span>⚑</span><b>Barracks</b></button>
+          <button class="client-nav coming" data-feature="vs"><span>◈</span><b>VS Arena</b></button>
+        </nav>
+        <div class="client-sidebar-bottom">
+          <a href="whitepaper.html"><span>▤</span><b>Whitepaper</b></a>
+          <button class="client-nav coming" data-feature="wallet"><span>◎</span><b>Wallet</b></button>
+          <button class="install hidden" id="install">Install app</button>
+        </div>
+      </aside>
+
+      <main class="client-main">
+        <header class="client-topbar">
+          <div><small>KENNEL HQ</small><strong>Welcome back, Alpha.</strong></div>
+          <div class="client-profile"><span>ϟ <b>1,240</b> PAW</span><span>◎ PLAYER #1024</span></div>
+        </header>
+        <div class="client-content">
+          <section class="hero" id="intro">
+            <div class="hero-copy">
+              <p class="eyebrow"><span></span> FEATURED MODE · SEASON ZERO</p>
+              <h1>Tavern<br /><em>Skirmish.</em></h1>
+              <p class="lede">Build a three-hero pack and break the rival kennel before the clock expires.</p>
+              <div class="difficulty" role="group" aria-label="Choose AI difficulty"><span>RIVAL SKILL</span><button data-difficulty="easy">Easy</button><button class="selected" data-difficulty="normal">Normal</button><button data-difficulty="hard">Hard</button></div>
+              <nav class="main-menu" aria-label="Game modes">
+                <button class="menu-tile primary-mode" id="play"><span class="menu-icon">ϟ</span><span><small>PLAY NOW</small><b>Quick Match</b><em>Battle an AI rival</em></span><i>→</i></button>
+                <button class="menu-tile coming" data-feature="vs"><span class="menu-icon">⚔</span><span><small>COMING NEXT</small><b>VS Arena</b><em>Ranked & friendly PvP</em></span><i>LOCKED</i></button>
+                <button class="menu-tile coming" data-feature="market"><span class="menu-icon">◇</span><span><small>EXPLORE</small><b>Market</b><em>Cosmetics & collectibles</em></span><i>PREVIEW</i></button>
+                <button class="menu-tile coming" data-feature="collection"><span class="menu-icon">♢</span><span><small>YOUR PACK</small><b>Collection</b><em>Heroes, skins & emotes</em></span><i>PREVIEW</i></button>
+                <button class="menu-tile coming barracks-tile" data-feature="barracks"><span class="menu-icon">⚑</span><span><small>RECRUIT</small><b>Barracks</b><em>Summon heroes with Treats</em></span><i>PREVIEW</i></button>
+              </nav>
+              <p class="fine-print">No wallet. No purchase. Just paws and tactics.</p>
+            </div>
+            <div class="pack-showcase" aria-label="Your starting pack">
+              <article class="hero-card warrior"><div class="role"><span>01</span> GUARDIAN</div><img src="assets/characters/brutus-warrior.png" alt="Brutus, a Shiba Inu warrior with a paw shield" /><div class="hero-name"><span>BRUTUS</span><small>Holds the line</small></div></article>
+              <article class="hero-card healer"><div class="role"><span>02</span> HEALER</div><img src="assets/characters/sage-healer.png" alt="Sage, a Corgi healer holding a glowing paw charm" /><div class="hero-name"><span>SAGE</span><small>Mends the pack</small></div></article>
+              <article class="hero-card mage"><div class="role"><span>03</span> MAGE</div><img src="assets/characters/hex-mage.png" alt="Hex, a Dachshund magician with a glowing staff" /><div class="hero-name"><span>HEX</span><small>Burns through crowds</small></div></article>
+            </div>
+          </section>
+
+          <section class="game hidden" id="game" aria-live="polite">
+            <div class="match-topbar">
+              <button class="icon-button" id="pause" aria-label="Pause match">Ⅱ</button>
+              <div class="tower-stat player"><span class="team-label">YOUR KENNEL</span><div class="hp-row"><strong id="playerHp">2200</strong><small id="playerShield"></small></div><div class="bar"><i id="playerBar"></i><b id="playerShieldBar"></b></div></div>
+              <div class="timer"><span id="phase">BATTLE</span><strong id="clock">3:00</strong><small id="difficultyLabel">NORMAL RIVAL</small></div>
+              <div class="tower-stat enemy"><span class="team-label">RIVAL KENNEL</span><div class="hp-row"><strong id="enemyHp">2200</strong><small id="enemyShield"></small></div><div class="bar"><i id="enemyBar"></i><b id="enemyShieldBar"></b></div></div>
+              <button class="icon-button sound-button" id="sound" aria-label="Toggle sound">♪</button>
+            </div>
+            <div class="arena" id="arena">
+              <div class="tavern-backdrop"><i></i><i></i><i></i></div><div class="banner home-banner">PAW</div><div class="banner rival-banner">RUF</div>
+              <div class="tower home"><span>♜</span><b>BLUE KENNEL</b><i></i></div><div class="tower rival"><span>♜</span><b>RED KENNEL</b><i></i></div><div class="lane"><span></span></div>
+              <div class="units" id="units"></div><div class="battle-toast" id="toast"></div><div class="emote-bubble player-emote" id="playerEmote"></div><div class="emote-bubble enemy-emote" id="enemyEmote"></div><div class="frenzy-banner" id="frenzyBanner">FINAL MINUTE · DOUBLE ENERGY</div>
+            </div>
+            <div class="battle-controls">
+              <div class="energy-block"><span class="bolt">ϟ</span><div><strong id="energy">5.0</strong><small>ENERGY</small></div><div class="energy-pips" id="energyPips"></div></div>
+              <div class="summon-area"><p><span>SUMMON YOUR PACK</span><small id="nextHint">Choose a fighter</small></p><div class="cards">
+                <button class="card warrior" data-unit="brutus"><img src="assets/characters/brutus-warrior.png" alt="" /><span><b>Brutus</b><small>Guardian · shield</small></span><i>2</i></button>
+                <button class="card healer" data-unit="sage"><img src="assets/characters/sage-healer.png" alt="" /><span><b>Sage</b><small>Support · heal</small></span><i>3</i></button>
+                <button class="card mage" data-unit="hex"><img src="assets/characters/hex-mage.png" alt="" /><span><b>Hex</b><small>Ranged · burst</small></span><i>3</i></button>
+              </div></div>
+              <div class="skills"><button class="skill heal" id="healSkill"><span>✦</span><b>PACK MEND</b><small id="healText">READY</small></button><button class="skill shield" id="shieldSkill"><span>⬡</span><b>GUARD RALLY</b><small id="shieldText">READY</small></button></div>
+              <div class="emotes" aria-label="Pack emotes"><button data-emote="NICE!">🐾</button><button data-emote="WOOF?!">!</button><button data-emote="TO THE MOON!">↗</button></div>
+            </div>
+          </section>
+
+          <section class="game-notes" id="how"><p class="eyebrow"><span></span> FIELD GUIDE</p><div class="notes-grid"><article><b>01</b><h2>Protect the guardian</h2><p>Brutus soaks damage and grants nearby allies a shield when his rally is ready.</p></article><article><b>02</b><h2>Time your support</h2><p>Sage restores the most wounded ally. A well-timed Pack Mend can reverse a push.</p></article><article><b>03</b><h2>Stack the final minute</h2><p>Energy generation doubles at 1:00. Save enough to turn the tavern floor into chaos.</p></article></div></section>
+        </div>
+      </main>
+    </div>
+
+    <dialog id="tutorialDialog" class="tutorial-dialog"><div class="result-inner tutorial-inner"><p class="eyebrow"><span></span> QUICK MATCH BRIEFING</p><h2>Three minutes.<br /><em>One kennel.</em></h2><p>Push across the tavern floor and break the rival kennel before they break yours.</p><div class="tutorial-steps"><article><b>1</b><span><strong>Summon your pack</strong><small>Spend energy on Brutus, Sage, or Hex.</small></span></article><article><b>2</b><span><strong>Support the push</strong><small>Use Pack Mend and Guard Rally at the right moment.</small></span></article><article><b>3</b><span><strong>Own the final minute</strong><small>Energy doubles when the timer reaches 1:00.</small></span></article></div><div class="tutorial-rival"><span>RIVAL SELECTED</span><b id="tutorialDifficulty">NORMAL</b></div><button class="primary tutorial-start" id="startBattle">Unleash the Pack! <span>→</span></button><button class="text-button" id="closeTutorial">Back to HQ</button></div></dialog>
+    <dialog id="result"><div class="result-inner"><p class="eyebrow" id="resultLabel">MATCH COMPLETE</p><h2 id="resultTitle">The kennel stands.</h2><div class="result-score"><span><small>YOUR KENNEL</small><b id="resultPlayerHp">0</b></span><i>—</i><span><small>RIVAL KENNEL</small><b id="resultEnemyHp">0</b></span></div><p id="resultCopy"></p><button class="primary" id="again">Run it back <span>→</span></button><button class="text-button" id="menuFromResult">Back to HQ</button></div></dialog>
+    <dialog id="pauseDialog"><div class="result-inner pause-inner"><p class="eyebrow">MATCH PAUSED</p><h2>Catch your breath.</h2><p>Your pack will wait right here.</p><button class="primary" id="resume">Resume <span>→</span></button><button class="text-button" id="quitMatch">Quit match</button></div></dialog>
+    <dialog id="featureDialog"><div class="result-inner feature-inner"><span class="feature-icon" id="featureIcon">⚔</span><p class="eyebrow" id="featureEyebrow">ON THE ROADMAP</p><h2 id="featureTitle">VS Arena</h2><p id="featureCopy"></p><div class="feature-status"><span></span><small id="featureStatus">FOUNDATION IN PROGRESS</small></div><button class="primary" id="closeFeature">Back to HQ <span>→</span></button></div></dialog>
+    <script src="app.js"></script>
+  </body>
+</html>
